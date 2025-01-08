@@ -1,0 +1,165 @@
+import pandas as pd
+
+# Load the dataset
+data = pd.read_excel("./insights/data_with_clusters.xlsx")
+
+# Create a DataFrame
+df = pd.DataFrame(data)
+
+# Convert timestamp to datetime
+df['timestamp'] = pd.to_datetime(df['timestamp'])
+
+# Filter by individual-taxon-canonical-name
+individual_identifier = 'Buceros bicornis'  # Buceros bicornis, Rhyticeros undulatus
+df_filtered = df[df['individual-taxon-canonical-name'] == individual_identifier]
+
+# Sort the data by timestamp
+df_filtered = df_filtered.sort_values(by='timestamp').reset_index(drop=True)
+
+# Identify cluster changes
+df_filtered['previous_cluster'] = df_filtered['cluster'].shift(1)
+df_filtered['cluster_change'] = df_filtered['cluster'] != df_filtered['previous_cluster']
+
+# Calculate time spent in each cluster
+df_filtered['time_in_cluster'] = df_filtered['timestamp'].shift(-1) - df_filtered['timestamp']
+
+# Track the migration path
+migration_path = df_filtered[df_filtered['cluster_change'] == True].copy()
+
+# Calculate time spent in the previous cluster before each migration
+migration_path['time_spent_previous_cluster'] = migration_path['timestamp'] - df_filtered['timestamp'].shift(1)
+
+# Add a migration index for easier reference
+migration_path['migration_index'] = migration_path.index + 1
+
+# Calculate the total time spent in each cluster
+total_time_spent = df_filtered.groupby('cluster')['time_in_cluster'].sum().reset_index()
+total_time_spent.columns = ['cluster', 'total_time_spent']
+
+# Merge the migration path with the total time spent in clusters
+migration_path = pd.merge(migration_path, total_time_spent, on='cluster', how='left')
+
+# Calculate number of migrations
+number_of_migrations = migration_path.shape[0]
+print(f"\nNumber of migrations: {number_of_migrations}")
+
+# Calculate time spent in each cluster before each migration
+migration_indices = df_filtered[df_filtered['cluster_change']].index
+
+# Initialize a list to hold results
+cluster_times = []
+
+# Calculate time spent in each cluster before each migration
+for i in range(len(migration_indices)):
+    start_idx = migration_indices[i]  # start of current cluster
+    end_idx = migration_indices[i + 1] if i + 1 < len(migration_indices) else len(df_filtered)  # end of current cluster
+    cluster_time = df_filtered.iloc[start_idx:end_idx]['time_in_cluster'].sum()
+    cluster = df_filtered.iloc[start_idx]['cluster']
+    cluster_times.append({'migration_index': i + 1, 'cluster': cluster, 'time_spent': cluster_time})
+
+# Convert results to a DataFrame
+cluster_times_df = pd.DataFrame(cluster_times)
+
+# Merge the cluster times DataFrame with the total time spent DataFrame
+merged_df = pd.merge(cluster_times_df, total_time_spent, on='cluster', how='left')
+
+# Save the combined DataFrame to an Excel file
+output_file = "./insights/migration_analysis_output.xlsx"
+with pd.ExcelWriter(output_file) as writer:
+    df_filtered.to_excel(writer, sheet_name='Filtered Data', index=False)
+    migration_path.to_excel(writer, sheet_name='Migration Path', index=False)
+    cluster_times_df.to_excel(writer, sheet_name='Cluster Times', index=False)
+    merged_df.to_excel(writer, sheet_name='Combined Output', index=False)
+
+print(f"\nCombined data saved to {output_file}")
+
+
+============================================================================================================================
+import plotly.graph_objects as go
+import networkx as nx
+
+# Initialize a directed graph
+G = nx.DiGraph()
+
+# Add nodes (clusters) to the graph with time spent labels
+for i in range(len(migration_path)):
+    cluster = migration_path.iloc[i]['cluster']
+    time_spent = cluster_times_df.iloc[i]['time_spent']
+    G.add_node(cluster, label=f"Cluster {cluster}\nTime Spent: {time_spent}")
+
+# Add edges (migrations) with time taken to move between clusters
+for i in range(len(migration_path)):
+    from_cluster = migration_path.iloc[i]['previous_cluster']
+    to_cluster = migration_path.iloc[i]['cluster']
+    time_to_move = migration_path.iloc[i]['time_spent_previous_cluster']
+    G.add_edge(from_cluster, to_cluster, label=f"Time to Move: {time_to_move}")
+
+# Position the nodes using a layout
+pos = nx.spring_layout(G, seed=42)
+
+# Extract node and edge information for Plotly
+node_x = []
+node_y = []
+node_labels = []
+for node in G.nodes():
+    x, y = pos[node]
+    node_x.append(x)
+    node_y.append(y)
+    node_labels.append(G.nodes[node].get('label', f"Cluster {node}"))
+
+edge_x = []
+edge_y = []
+edge_labels = []
+for edge in G.edges():
+    x0, y0 = pos[edge[0]]
+    x1, y1 = pos[edge[1]]
+    edge_x.append(x0)
+    edge_x.append(x1)
+    edge_x.append(None)  # to create a break in the line
+    edge_y.append(y0)
+    edge_y.append(y1)
+    edge_y.append(None)
+    edge_labels.append(G.edges[edge].get('label', ''))
+
+# Create the plotly figure
+fig = go.Figure()
+
+# Add edges to the plot
+fig.add_trace(go.Scatter(
+    x=edge_x, y=edge_y,
+    line=dict(width=2, color='gray'),
+    hoverinfo='none',
+    mode='lines'))
+
+# Add nodes to the plot
+fig.add_trace(go.Scatter(
+    x=node_x, y=node_y,
+    mode='markers+text',
+    text=node_labels,
+    textposition="bottom center",
+    marker=dict(size=20, color='lightblue', line_width=2),
+    hoverinfo='text'))
+
+# Add edge labels (time to move between clusters)
+for i, edge_label in enumerate(edge_labels):
+    x0, y0 = pos[list(G.edges)[i][0]]
+    x1, y1 = pos[list(G.edges)[i][1]]
+    fig.add_trace(go.Scatter(
+        x=[(x0 + x1) / 2], y=[(y0 + y1) / 2],
+        text=[edge_label],
+        mode="text",
+        hoverinfo='text',
+        textfont=dict(color="red"),
+        showlegend=False))
+
+# Update layout
+fig.update_layout(
+    title=f"Migration Path with Time Spent and Time to Move\n({individual_identifier})",
+    showlegend=False,
+    xaxis=dict(showgrid=False, zeroline=False),
+    yaxis=dict(showgrid=False, zeroline=False),
+    plot_bgcolor='white'
+)
+
+# Show the figure
+fig.show()
