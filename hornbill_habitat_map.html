@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_c636d9e24020959ee1544f7e9abaef93 {
+                #map_10c0e72f57d51c1e5ce9b77abd77a114 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,27 +35,24 @@
                 .leaflet-container { font-size: 1rem; }
             </style>
         
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
 </head>
 <body>
     
     
 <div style="position: fixed; bottom: 50px; left: 50px; z-index: 1000; background-color: white; padding: 10px; border: 2px solid grey;">
 <h4>Hornbill Habitat Suitability</h4>
-<p><span style="color:red;">●</span> unSuitable for Hornbill</p><p><span style="color:orange;">●</span> Less Suitability for Hornbill</p><p><span style="color:lightred;">●</span> Minimal Suitability for Hornbill</p><p><span style="color:lightgreen;">●</span> Moderately Suitable for Hornbill</p><p><span style="color:green;">●</span> Highly Suitable for Hornbill</p><p><span style="color:darkgreen;">●</span> Extremely Suitable for Hornbill</p><p><span style="color:darkpurple;">●</span> Ideal Suitable for Hornbill</p></div>
+<p><span style="color:red;">●</span> unSuitable for Hornbill</p><p><span style="color:orange;">●</span> Less Suitability for Hornbill</p><p><span style="color:lightred;">●</span> Minimal Suitability for Hornbill</p><p><span style="color:lightgreen;">●</span> Suitable for Hornbill</p><p><span style="color:green;">●</span> Highly Suitable for Hornbill</p><p><span style="color:darkgreen;">●</span> Extremely Suitable for Hornbill</p><p><span style="color:darkpurple;">●</span> Ideal Suitable for Hornbill</p></div>
     
-            <div class="folium-map" id="map_c636d9e24020959ee1544f7e9abaef93" ></div>
+            <div class="folium-map" id="map_10c0e72f57d51c1e5ce9b77abd77a114" ></div>
         
 </body>
 <script>
     
     
-            var map_c636d9e24020959ee1544f7e9abaef93 = L.map(
-                "map_c636d9e24020959ee1544f7e9abaef93",
+            var map_10c0e72f57d51c1e5ce9b77abd77a114 = L.map(
+                "map_10c0e72f57d51c1e5ce9b77abd77a114",
                 {
-                    center: [7.6800000000000015, 59.152],
+                    center: [24.348333333333333, 41.760555555555555],
                     crs: L.CRS.EPSG3857,
                     zoom: 3,
                     zoomControl: true,
@@ -67,291 +64,499 @@
 
         
     
-            var tile_layer_972ad416e7b1b0c896130232018fb8be = L.tileLayer(
+            var tile_layer_3d9332e8cc2df6bd23c109c50bb39095 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_972ad416e7b1b0c896130232018fb8be.addTo(map_c636d9e24020959ee1544f7e9abaef93);
+            tile_layer_3d9332e8cc2df6bd23c109c50bb39095.addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
         
     
-            var marker_cluster_88527a8b3205f26d0329f75dbe45a656 = L.markerClusterGroup(
+            var marker_8252b117f61cceb5a64d775fa3a64d22 = L.marker(
+                [-13.13, -72.97],
                 {}
-            );
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
         
     
-            var marker_c081af7cfe200dcff3df0adcf2daecd2 = L.marker(
-                [-20.8, 31.65],
-                {}
-            ).addTo(marker_cluster_88527a8b3205f26d0329f75dbe45a656);
-        
-    
-            var icon_643bfa4a1ad7670befa877ad5bb99b8f = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
-            );
-            marker_c081af7cfe200dcff3df0adcf2daecd2.setIcon(icon_643bfa4a1ad7670befa877ad5bb99b8f);
-        
-    
-        var popup_9f13f52479c0dd934429cb6f42a2d8a4 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_c4cb2cd32e309abc641abf89e0b00372 = $(`<div id="html_c4cb2cd32e309abc641abf89e0b00372" style="width: 100.0%; height: 100.0%;">     Latitude: -20.8     Longitude: 31.65     Suitability: Highly Suitable for Hornbill     Hornbill Present: True     Suitable Habitat: True     </div>`)[0];
-                popup_9f13f52479c0dd934429cb6f42a2d8a4.setContent(html_c4cb2cd32e309abc641abf89e0b00372);
-            
-        
-
-        marker_c081af7cfe200dcff3df0adcf2daecd2.bindPopup(popup_9f13f52479c0dd934429cb6f42a2d8a4)
-        ;
-
-        
-    
-    
-            var marker_d3ece2d5a1a0b78c593c5f1346626244 = L.marker(
-                [-13.41, 79.11],
-                {}
-            ).addTo(marker_cluster_88527a8b3205f26d0329f75dbe45a656);
-        
-    
-            var icon_3e6a95833fccb87819201d09d711eb90 = L.AwesomeMarkers.icon(
+            var icon_67a5bb2b15e4ae73496565441074b8b1 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_d3ece2d5a1a0b78c593c5f1346626244.setIcon(icon_3e6a95833fccb87819201d09d711eb90);
+            marker_8252b117f61cceb5a64d775fa3a64d22.setIcon(icon_67a5bb2b15e4ae73496565441074b8b1);
         
     
-        var popup_f17f792225f6ae8f3c4624e3b1f5a124 = L.popup({"maxWidth": "100%"});
+        var popup_0857bdc10a5736d5300dc0f3bc68406a = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_f399060f2f411e0088290dbc0986c075 = $(`<div id="html_f399060f2f411e0088290dbc0986c075" style="width: 100.0%; height: 100.0%;">     Latitude: -13.41     Longitude: 79.11     Suitability: unSuitable for Hornbill     Hornbill Present: False     Suitable Habitat: False     </div>`)[0];
-                popup_f17f792225f6ae8f3c4624e3b1f5a124.setContent(html_f399060f2f411e0088290dbc0986c075);
+                var html_bdccd48bf9a1c8f61170e95b9c70f3eb = $(`<div id="html_bdccd48bf9a1c8f61170e95b9c70f3eb" style="width: 100.0%; height: 100.0%;">     Latitude: -13.13     Longitude: -72.97     Suitability: unSuitable for Hornbill     Hornbill Present: False     Suitable Habitat: False     </div>`)[0];
+                popup_0857bdc10a5736d5300dc0f3bc68406a.setContent(html_bdccd48bf9a1c8f61170e95b9c70f3eb);
             
         
 
-        marker_d3ece2d5a1a0b78c593c5f1346626244.bindPopup(popup_f17f792225f6ae8f3c4624e3b1f5a124)
+        marker_8252b117f61cceb5a64d775fa3a64d22.bindPopup(popup_0857bdc10a5736d5300dc0f3bc68406a)
         ;
 
         
     
     
-            var marker_063e1630bf8a830d3fbc2536be7acd9d = L.marker(
-                [0.82, 113.93],
+            var marker_b104ceb4c642286120ae24f393b23cb1 = L.marker(
+                [-3.5, -60.0],
                 {}
-            ).addTo(marker_cluster_88527a8b3205f26d0329f75dbe45a656);
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
         
     
-            var icon_f9802ab3800637bd6cab2781d67b9381 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
-            );
-            marker_063e1630bf8a830d3fbc2536be7acd9d.setIcon(icon_f9802ab3800637bd6cab2781d67b9381);
-        
-    
-        var popup_af56b10225e7bc13159c91683c825ba3 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_4da5dd7cf013057ff364f7c72e4a0e8a = $(`<div id="html_4da5dd7cf013057ff364f7c72e4a0e8a" style="width: 100.0%; height: 100.0%;">     Latitude: 0.82     Longitude: 113.93     Suitability: Ideal Suitable for Hornbill     Hornbill Present: True     Suitable Habitat: True     </div>`)[0];
-                popup_af56b10225e7bc13159c91683c825ba3.setContent(html_4da5dd7cf013057ff364f7c72e4a0e8a);
-            
-        
-
-        marker_063e1630bf8a830d3fbc2536be7acd9d.bindPopup(popup_af56b10225e7bc13159c91683c825ba3)
-        ;
-
-        
-    
-    
-            var marker_14dda3b97d11b97911307d73bba19568 = L.marker(
-                [1.41, 103.95],
-                {}
-            ).addTo(marker_cluster_88527a8b3205f26d0329f75dbe45a656);
-        
-    
-            var icon_c714b6416b3b01fa9eadff1e3226aae0 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
-            );
-            marker_14dda3b97d11b97911307d73bba19568.setIcon(icon_c714b6416b3b01fa9eadff1e3226aae0);
-        
-    
-        var popup_03995aa3391d144775a4083b455140e1 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_5bc3d855a134333ed205fcf9579d02ed = $(`<div id="html_5bc3d855a134333ed205fcf9579d02ed" style="width: 100.0%; height: 100.0%;">     Latitude: 1.41     Longitude: 103.95     Suitability: Ideal Suitable for Hornbill     Hornbill Present: True     Suitable Habitat: True     </div>`)[0];
-                popup_03995aa3391d144775a4083b455140e1.setContent(html_5bc3d855a134333ed205fcf9579d02ed);
-            
-        
-
-        marker_14dda3b97d11b97911307d73bba19568.bindPopup(popup_03995aa3391d144775a4083b455140e1)
-        ;
-
-        
-    
-    
-            var marker_0079ce13a30e736fe3d4fd60fcfbcb8f = L.marker(
-                [6.5, 80.85],
-                {}
-            ).addTo(marker_cluster_88527a8b3205f26d0329f75dbe45a656);
-        
-    
-            var icon_b4001ed0710a8d16a1d03ed6536fc663 = L.AwesomeMarkers.icon(
+            var icon_d4c143b713565bbb257f61dc1217baa5 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_0079ce13a30e736fe3d4fd60fcfbcb8f.setIcon(icon_b4001ed0710a8d16a1d03ed6536fc663);
+            marker_b104ceb4c642286120ae24f393b23cb1.setIcon(icon_d4c143b713565bbb257f61dc1217baa5);
         
     
-        var popup_fc8220f8483cc4ac845873fe3d30fd5c = L.popup({"maxWidth": "100%"});
+        var popup_5b8d6c6be797b3fbe14b86697b5cc1d2 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_b9c9650b2a504a1c2a49af35538f8dd9 = $(`<div id="html_b9c9650b2a504a1c2a49af35538f8dd9" style="width: 100.0%; height: 100.0%;">     Latitude: 6.5     Longitude: 80.85     Suitability: Highly Suitable for Hornbill     Hornbill Present: True     Suitable Habitat: True     </div>`)[0];
-                popup_fc8220f8483cc4ac845873fe3d30fd5c.setContent(html_b9c9650b2a504a1c2a49af35538f8dd9);
+                var html_69ed1cfc79ddc5efb98397f5ee2a8884 = $(`<div id="html_69ed1cfc79ddc5efb98397f5ee2a8884" style="width: 100.0%; height: 100.0%;">     Latitude: -3.5     Longitude: -60.0     Suitability: Highly Suitable for Hornbill     Hornbill Present: False     Suitable Habitat: True     </div>`)[0];
+                popup_5b8d6c6be797b3fbe14b86697b5cc1d2.setContent(html_69ed1cfc79ddc5efb98397f5ee2a8884);
             
         
 
-        marker_0079ce13a30e736fe3d4fd60fcfbcb8f.bindPopup(popup_fc8220f8483cc4ac845873fe3d30fd5c)
+        marker_b104ceb4c642286120ae24f393b23cb1.bindPopup(popup_5b8d6c6be797b3fbe14b86697b5cc1d2)
         ;
 
         
     
     
-            var marker_bab0d8294d71a5ae1bcfc13fd34de1b2 = L.marker(
-                [10.13, 76.71],
+            var marker_25ec51f9602ff337b136f972c5bf330e = L.marker(
+                [-2.25, 10.75],
                 {}
-            ).addTo(marker_cluster_88527a8b3205f26d0329f75dbe45a656);
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
         
     
-            var icon_308371a3f0d0b4ba204817adc780597f = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            var icon_2e737b78b65527c5e9a3941381a0a364 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightgreen", "prefix": "glyphicon"}
             );
-            marker_bab0d8294d71a5ae1bcfc13fd34de1b2.setIcon(icon_308371a3f0d0b4ba204817adc780597f);
+            marker_25ec51f9602ff337b136f972c5bf330e.setIcon(icon_2e737b78b65527c5e9a3941381a0a364);
         
     
-        var popup_da4a2c2f075c3332a65d2c477f2b8227 = L.popup({"maxWidth": "100%"});
+        var popup_e1fcb58257dc80776bfa5070900e656e = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_eef5a32f274a22f7fbb3d772ddf201db = $(`<div id="html_eef5a32f274a22f7fbb3d772ddf201db" style="width: 100.0%; height: 100.0%;">     Latitude: 10.13     Longitude: 76.71     Suitability: Ideal Suitable for Hornbill     Hornbill Present: True     Suitable Habitat: True     </div>`)[0];
-                popup_da4a2c2f075c3332a65d2c477f2b8227.setContent(html_eef5a32f274a22f7fbb3d772ddf201db);
+                var html_a61486fce47a2ca22428d7a9a45090bf = $(`<div id="html_a61486fce47a2ca22428d7a9a45090bf" style="width: 100.0%; height: 100.0%;">     Latitude: -2.25     Longitude: 10.75     Suitability: Suitable for Hornbill     Hornbill Present: True     Suitable Habitat: True     </div>`)[0];
+                popup_e1fcb58257dc80776bfa5070900e656e.setContent(html_a61486fce47a2ca22428d7a9a45090bf);
             
         
 
-        marker_bab0d8294d71a5ae1bcfc13fd34de1b2.bindPopup(popup_da4a2c2f075c3332a65d2c477f2b8227)
+        marker_25ec51f9602ff337b136f972c5bf330e.bindPopup(popup_e1fcb58257dc80776bfa5070900e656e)
         ;
 
         
     
     
-            var marker_a2ce4e68e7cacc3735f142f89cad4cfd = L.marker(
-                [13.77, 79.31],
+            var marker_ceb30d693b0cacd9adc55a6261597475 = L.marker(
+                [9.26, 77.11],
                 {}
-            ).addTo(marker_cluster_88527a8b3205f26d0329f75dbe45a656);
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
         
     
-            var icon_5243a41e321ea0253f3f4c4af09e32e4 = L.AwesomeMarkers.icon(
+            var icon_f3bdd9ec3f687d49ae693addecdeded8 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_a2ce4e68e7cacc3735f142f89cad4cfd.setIcon(icon_5243a41e321ea0253f3f4c4af09e32e4);
+            marker_ceb30d693b0cacd9adc55a6261597475.setIcon(icon_f3bdd9ec3f687d49ae693addecdeded8);
         
     
-        var popup_54422a62ee6ed0cbbdaa9bec89cd092a = L.popup({"maxWidth": "100%"});
+        var popup_a6cd48f4a9863c9cae546bc2b5004d81 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_1092766a843f08e1213574278a3f3c27 = $(`<div id="html_1092766a843f08e1213574278a3f3c27" style="width: 100.0%; height: 100.0%;">     Latitude: 13.77     Longitude: 79.31     Suitability: Highly Suitable for Hornbill     Hornbill Present: True     Suitable Habitat: True     </div>`)[0];
-                popup_54422a62ee6ed0cbbdaa9bec89cd092a.setContent(html_1092766a843f08e1213574278a3f3c27);
+                var html_ab8cd4b33a218ef3fec6fa71393a2b0b = $(`<div id="html_ab8cd4b33a218ef3fec6fa71393a2b0b" style="width: 100.0%; height: 100.0%;">     Latitude: 9.26     Longitude: 77.11     Suitability: Highly Suitable for Hornbill     Hornbill Present: True     Suitable Habitat: True     </div>`)[0];
+                popup_a6cd48f4a9863c9cae546bc2b5004d81.setContent(html_ab8cd4b33a218ef3fec6fa71393a2b0b);
             
         
 
-        marker_a2ce4e68e7cacc3735f142f89cad4cfd.bindPopup(popup_54422a62ee6ed0cbbdaa9bec89cd092a)
+        marker_ceb30d693b0cacd9adc55a6261597475.bindPopup(popup_a6cd48f4a9863c9cae546bc2b5004d81)
         ;
 
         
     
     
-            var marker_41ba8e16e1e7a52e5724ba826d10d072 = L.marker(
-                [25.76, 13.69],
+            var marker_7b26f3fa16a95456a36e6ebf032fc7cf = L.marker(
+                [14.35, 106.57],
                 {}
-            ).addTo(marker_cluster_88527a8b3205f26d0329f75dbe45a656);
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
         
     
-            var icon_6e38586e60f1f6a93594d7d18176025f = L.AwesomeMarkers.icon(
+            var icon_75b4c8c561e20e2679d1ce8daed15191 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            );
+            marker_7b26f3fa16a95456a36e6ebf032fc7cf.setIcon(icon_75b4c8c561e20e2679d1ce8daed15191);
+        
+    
+        var popup_c605a49f1cf53bf40813b34ee72e0dc6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7b863f17487704952d710cce4e4b14ad = $(`<div id="html_7b863f17487704952d710cce4e4b14ad" style="width: 100.0%; height: 100.0%;">     Latitude: 14.35     Longitude: 106.57     Suitability: Ideal Suitable for Hornbill     Hornbill Present: True     Suitable Habitat: True     </div>`)[0];
+                popup_c605a49f1cf53bf40813b34ee72e0dc6.setContent(html_7b863f17487704952d710cce4e4b14ad);
+            
+        
+
+        marker_7b26f3fa16a95456a36e6ebf032fc7cf.bindPopup(popup_c605a49f1cf53bf40813b34ee72e0dc6)
+        ;
+
+        
+    
+    
+            var marker_fba7a6a5d5a6379f58ae48222182776a = L.marker(
+                [15.87, 100.99],
+                {}
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
+        
+    
+            var icon_60ae0108d1b2c9e3303f0449402c1725 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_fba7a6a5d5a6379f58ae48222182776a.setIcon(icon_60ae0108d1b2c9e3303f0449402c1725);
+        
+    
+        var popup_4980eda36f36e826fea54692bd0709f6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fd8f742cdae524bbfa864e315d6ad8aa = $(`<div id="html_fd8f742cdae524bbfa864e315d6ad8aa" style="width: 100.0%; height: 100.0%;">     Latitude: 15.87     Longitude: 100.99     Suitability: Highly Suitable for Hornbill     Hornbill Present: True     Suitable Habitat: True     </div>`)[0];
+                popup_4980eda36f36e826fea54692bd0709f6.setContent(html_fd8f742cdae524bbfa864e315d6ad8aa);
+            
+        
+
+        marker_fba7a6a5d5a6379f58ae48222182776a.bindPopup(popup_4980eda36f36e826fea54692bd0709f6)
+        ;
+
+        
+    
+    
+            var marker_f031c41284b57b5673d9fb1c9c965dff = L.marker(
+                [19.8, 80.97],
+                {}
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
+        
+    
+            var icon_bc1e82456a750634189b1b7370e6c753 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            );
+            marker_f031c41284b57b5673d9fb1c9c965dff.setIcon(icon_bc1e82456a750634189b1b7370e6c753);
+        
+    
+        var popup_b1ee9b59e424041c9a33f5e51e64a166 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_39b3674dbd7a374024cba02754a196e4 = $(`<div id="html_39b3674dbd7a374024cba02754a196e4" style="width: 100.0%; height: 100.0%;">     Latitude: 19.8     Longitude: 80.97     Suitability: Ideal Suitable for Hornbill     Hornbill Present: True     Suitable Habitat: True     </div>`)[0];
+                popup_b1ee9b59e424041c9a33f5e51e64a166.setContent(html_39b3674dbd7a374024cba02754a196e4);
+            
+        
+
+        marker_f031c41284b57b5673d9fb1c9c965dff.bindPopup(popup_b1ee9b59e424041c9a33f5e51e64a166)
+        ;
+
+        
+    
+    
+            var marker_188a56769cebad5dc6bfb82f2a39978f = L.marker(
+                [21.92, 95.96],
+                {}
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
+        
+    
+            var icon_9566ee5faac9ba74561a0264ce12d5a0 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_41ba8e16e1e7a52e5724ba826d10d072.setIcon(icon_6e38586e60f1f6a93594d7d18176025f);
+            marker_188a56769cebad5dc6bfb82f2a39978f.setIcon(icon_9566ee5faac9ba74561a0264ce12d5a0);
         
     
-        var popup_d23c69ff9ac065d4dfc603174bc6e96b = L.popup({"maxWidth": "100%"});
+        var popup_f01395fc49664856427c53702792c79d = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_073f760acc8dd3a588271b18f25f5131 = $(`<div id="html_073f760acc8dd3a588271b18f25f5131" style="width: 100.0%; height: 100.0%;">     Latitude: 25.76     Longitude: 13.69     Suitability: Less Suitability for Hornbill     Hornbill Present: False     Suitable Habitat: False     </div>`)[0];
-                popup_d23c69ff9ac065d4dfc603174bc6e96b.setContent(html_073f760acc8dd3a588271b18f25f5131);
+                var html_de8f77876d2f16ec4b0e0670d6b5fc62 = $(`<div id="html_de8f77876d2f16ec4b0e0670d6b5fc62" style="width: 100.0%; height: 100.0%;">     Latitude: 21.92     Longitude: 95.96     Suitability: Less Suitability for Hornbill     Hornbill Present: False     Suitable Habitat: False     </div>`)[0];
+                popup_f01395fc49664856427c53702792c79d.setContent(html_de8f77876d2f16ec4b0e0670d6b5fc62);
             
         
 
-        marker_41ba8e16e1e7a52e5724ba826d10d072.bindPopup(popup_d23c69ff9ac065d4dfc603174bc6e96b)
+        marker_188a56769cebad5dc6bfb82f2a39978f.bindPopup(popup_f01395fc49664856427c53702792c79d)
         ;
 
         
     
     
-            var marker_30ee604f94c44468c6ce61b4856fb03e = L.marker(
-                [25.98, -81.04],
+            var marker_ea3d78407ca4f53ea549e7bc950e0537 = L.marker(
+                [22.75, 84.75],
                 {}
-            ).addTo(marker_cluster_88527a8b3205f26d0329f75dbe45a656);
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
         
     
-            var icon_3c8dad9ed50e7567f3fac5c6e865ab8b = L.AwesomeMarkers.icon(
+            var icon_590b98e06b5fb222eeeee8c9f490d14f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            );
+            marker_ea3d78407ca4f53ea549e7bc950e0537.setIcon(icon_590b98e06b5fb222eeeee8c9f490d14f);
+        
+    
+        var popup_76f40940b6ebf4427929ad10a5aae986 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_14d61c313085fb2aeb10d0f776aaeb91 = $(`<div id="html_14d61c313085fb2aeb10d0f776aaeb91" style="width: 100.0%; height: 100.0%;">     Latitude: 22.75     Longitude: 84.75     Suitability: Ideal Suitable for Hornbill     Hornbill Present: False     Suitable Habitat: True     </div>`)[0];
+                popup_76f40940b6ebf4427929ad10a5aae986.setContent(html_14d61c313085fb2aeb10d0f776aaeb91);
+            
+        
+
+        marker_ea3d78407ca4f53ea549e7bc950e0537.bindPopup(popup_76f40940b6ebf4427929ad10a5aae986)
+        ;
+
+        
+    
+    
+            var marker_ea32d52389e5d7dc7c38ad0c6f84b3c4 = L.marker(
+                [22.75, 85.25],
+                {}
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
+        
+    
+            var icon_2aaab2ec5436658918a0ce8a622f293e = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_30ee604f94c44468c6ce61b4856fb03e.setIcon(icon_3c8dad9ed50e7567f3fac5c6e865ab8b);
+            marker_ea32d52389e5d7dc7c38ad0c6f84b3c4.setIcon(icon_2aaab2ec5436658918a0ce8a622f293e);
         
     
-        var popup_5762b511190b6b8ef850d111372cb80d = L.popup({"maxWidth": "100%"});
+        var popup_64fc935f3c8b9ee2074900d853d91077 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_13fc845ac07ef08b0683ffe056e6089c = $(`<div id="html_13fc845ac07ef08b0683ffe056e6089c" style="width: 100.0%; height: 100.0%;">     Latitude: 25.98     Longitude: -81.04     Suitability: Highly Suitable for Hornbill     Hornbill Present: False     Suitable Habitat: True     </div>`)[0];
-                popup_5762b511190b6b8ef850d111372cb80d.setContent(html_13fc845ac07ef08b0683ffe056e6089c);
+                var html_f3e6221393e23d3ca8181ae53f8de3d5 = $(`<div id="html_f3e6221393e23d3ca8181ae53f8de3d5" style="width: 100.0%; height: 100.0%;">     Latitude: 22.75     Longitude: 85.25     Suitability: Highly Suitable for Hornbill     Hornbill Present: False     Suitable Habitat: True     </div>`)[0];
+                popup_64fc935f3c8b9ee2074900d853d91077.setContent(html_f3e6221393e23d3ca8181ae53f8de3d5);
             
         
 
-        marker_30ee604f94c44468c6ce61b4856fb03e.bindPopup(popup_5762b511190b6b8ef850d111372cb80d)
+        marker_ea32d52389e5d7dc7c38ad0c6f84b3c4.bindPopup(popup_64fc935f3c8b9ee2074900d853d91077)
         ;
 
         
     
     
-            var marker_d8b34807a0bca765daf2c6a1abdb0088 = L.marker(
-                [26.64, 93.36],
+            var marker_c5f2899e5237534e6fd7351afc32b10d = L.marker(
+                [23.69, 90.36],
                 {}
-            ).addTo(marker_cluster_88527a8b3205f26d0329f75dbe45a656);
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
         
     
-            var icon_72146671adbd746e34e654091c1f7529 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            var icon_dffee6d724e1d251cf332324995b6a17 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
             );
-            marker_d8b34807a0bca765daf2c6a1abdb0088.setIcon(icon_72146671adbd746e34e654091c1f7529);
+            marker_c5f2899e5237534e6fd7351afc32b10d.setIcon(icon_dffee6d724e1d251cf332324995b6a17);
         
     
-        var popup_8c264550820c77e7b6d40bbce3b0364d = L.popup({"maxWidth": "100%"});
+        var popup_ecd701291c4092b763e6ec311db4897a = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_e2b4c956ae3f5d24897f6559f0d023fe = $(`<div id="html_e2b4c956ae3f5d24897f6559f0d023fe" style="width: 100.0%; height: 100.0%;">     Latitude: 26.64     Longitude: 93.36     Suitability: Highly Suitable for Hornbill     Hornbill Present: True     Suitable Habitat: True     </div>`)[0];
-                popup_8c264550820c77e7b6d40bbce3b0364d.setContent(html_e2b4c956ae3f5d24897f6559f0d023fe);
+                var html_8f0fdcc9659095e2b222ab0c547dc7fc = $(`<div id="html_8f0fdcc9659095e2b222ab0c547dc7fc" style="width: 100.0%; height: 100.0%;">     Latitude: 23.69     Longitude: 90.36     Suitability: Ideal Suitable for Hornbill     Hornbill Present: False     Suitable Habitat: True     </div>`)[0];
+                popup_ecd701291c4092b763e6ec311db4897a.setContent(html_8f0fdcc9659095e2b222ab0c547dc7fc);
             
         
 
-        marker_d8b34807a0bca765daf2c6a1abdb0088.bindPopup(popup_8c264550820c77e7b6d40bbce3b0364d)
+        marker_c5f2899e5237534e6fd7351afc32b10d.bindPopup(popup_ecd701291c4092b763e6ec311db4897a)
         ;
 
         
     
     
-            marker_cluster_88527a8b3205f26d0329f75dbe45a656.addTo(map_c636d9e24020959ee1544f7e9abaef93);
+            var marker_a2546e9641d45313e9399ef0255adfd0 = L.marker(
+                [23.81, 87.69],
+                {}
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
         
+    
+            var icon_2685a3b0ab0a691d1c7ae9145bb06a77 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightgreen", "prefix": "glyphicon"}
+            );
+            marker_a2546e9641d45313e9399ef0255adfd0.setIcon(icon_2685a3b0ab0a691d1c7ae9145bb06a77);
+        
+    
+        var popup_7b63d0bbc660564753164e6839ae6ecc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1401ec45eefab2a0f5f072425d1225b6 = $(`<div id="html_1401ec45eefab2a0f5f072425d1225b6" style="width: 100.0%; height: 100.0%;">     Latitude: 23.81     Longitude: 87.69     Suitability: Suitable for Hornbill     Hornbill Present: True     Suitable Habitat: True     </div>`)[0];
+                popup_7b63d0bbc660564753164e6839ae6ecc.setContent(html_1401ec45eefab2a0f5f072425d1225b6);
+            
+        
+
+        marker_a2546e9641d45313e9399ef0255adfd0.bindPopup(popup_7b63d0bbc660564753164e6839ae6ecc)
+        ;
+
+        
+    
+    
+            var marker_bc36a31d6a2d77705a9740361c42d9fc = L.marker(
+                [26.25, 4.25],
+                {}
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
+        
+    
+            var icon_39943c1f93f4d438491fc2733dce248e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_bc36a31d6a2d77705a9740361c42d9fc.setIcon(icon_39943c1f93f4d438491fc2733dce248e);
+        
+    
+        var popup_a5d8281365acdd2bc04011a15d32b602 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f4649f0c32b3300c3d3145c8f267db2b = $(`<div id="html_f4649f0c32b3300c3d3145c8f267db2b" style="width: 100.0%; height: 100.0%;">     Latitude: 26.25     Longitude: 4.25     Suitability: unSuitable for Hornbill     Hornbill Present: False     Suitable Habitat: False     </div>`)[0];
+                popup_a5d8281365acdd2bc04011a15d32b602.setContent(html_f4649f0c32b3300c3d3145c8f267db2b);
+            
+        
+
+        marker_bc36a31d6a2d77705a9740361c42d9fc.bindPopup(popup_a5d8281365acdd2bc04011a15d32b602)
+        ;
+
+        
+    
+    
+            var marker_b03887a622b89d967e4bd081b5953965 = L.marker(
+                [27.5, 84.5],
+                {}
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
+        
+    
+            var icon_1b4ad0b6e29db750700f42c3ae14995c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_b03887a622b89d967e4bd081b5953965.setIcon(icon_1b4ad0b6e29db750700f42c3ae14995c);
+        
+    
+        var popup_96aebe8c2ea9ca5a1d79871a389c302b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b6d4aea25f8d2de962485f07a2967f98 = $(`<div id="html_b6d4aea25f8d2de962485f07a2967f98" style="width: 100.0%; height: 100.0%;">     Latitude: 27.5     Longitude: 84.5     Suitability: Less Suitability for Hornbill     Hornbill Present: True     Suitable Habitat: False     </div>`)[0];
+                popup_96aebe8c2ea9ca5a1d79871a389c302b.setContent(html_b6d4aea25f8d2de962485f07a2967f98);
+            
+        
+
+        marker_b03887a622b89d967e4bd081b5953965.bindPopup(popup_96aebe8c2ea9ca5a1d79871a389c302b)
+        ;
+
+        
+    
+    
+            var marker_7dd88e26740470d845caf4ebfb1b7f25 = L.marker(
+                [30.0, 80.0],
+                {}
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
+        
+    
+            var icon_97917b63948c5e28d44202fc9be7c647 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7dd88e26740470d845caf4ebfb1b7f25.setIcon(icon_97917b63948c5e28d44202fc9be7c647);
+        
+    
+        var popup_4379aee1f8cc9384daa8f5acf5eff303 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_69379a37162d08d8feece40f3849c7d1 = $(`<div id="html_69379a37162d08d8feece40f3849c7d1" style="width: 100.0%; height: 100.0%;">     Latitude: 30.0     Longitude: 80.0     Suitability: unSuitable for Hornbill     Hornbill Present: False     Suitable Habitat: False     </div>`)[0];
+                popup_4379aee1f8cc9384daa8f5acf5eff303.setContent(html_69379a37162d08d8feece40f3849c7d1);
+            
+        
+
+        marker_7dd88e26740470d845caf4ebfb1b7f25.bindPopup(popup_4379aee1f8cc9384daa8f5acf5eff303)
+        ;
+
+        
+    
+    
+            var marker_5828c3b03ec408754036ce0776048c73 = L.marker(
+                [60.0, 90.0],
+                {}
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
+        
+    
+            var icon_efadbd4e71632320a2b9e5b3bf420cef = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5828c3b03ec408754036ce0776048c73.setIcon(icon_efadbd4e71632320a2b9e5b3bf420cef);
+        
+    
+        var popup_d0d3538ac690c689fcb51d95692636d0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8d72f0ab1792c54c056c5a01cffaf7cf = $(`<div id="html_8d72f0ab1792c54c056c5a01cffaf7cf" style="width: 100.0%; height: 100.0%;">     Latitude: 60.0     Longitude: 90.0     Suitability: unSuitable for Hornbill     Hornbill Present: False     Suitable Habitat: False     </div>`)[0];
+                popup_d0d3538ac690c689fcb51d95692636d0.setContent(html_8d72f0ab1792c54c056c5a01cffaf7cf);
+            
+        
+
+        marker_5828c3b03ec408754036ce0776048c73.bindPopup(popup_d0d3538ac690c689fcb51d95692636d0)
+        ;
+
+        
+    
+    
+            var marker_f247291834138f34dd9eb7f35e6da85a = L.marker(
+                [64.2, -149.49],
+                {}
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
+        
+    
+            var icon_6e9d7c4d4c0bf3ba9a3565a67575bc7e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f247291834138f34dd9eb7f35e6da85a.setIcon(icon_6e9d7c4d4c0bf3ba9a3565a67575bc7e);
+        
+    
+        var popup_d004682abbfd50fdfdceca9514766b57 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d4360885a53379ae92de2a54f39113bf = $(`<div id="html_d4360885a53379ae92de2a54f39113bf" style="width: 100.0%; height: 100.0%;">     Latitude: 64.2     Longitude: -149.49     Suitability: unSuitable for Hornbill     Hornbill Present: False     Suitable Habitat: False     </div>`)[0];
+                popup_d004682abbfd50fdfdceca9514766b57.setContent(html_d4360885a53379ae92de2a54f39113bf);
+            
+        
+
+        marker_f247291834138f34dd9eb7f35e6da85a.bindPopup(popup_d004682abbfd50fdfdceca9514766b57)
+        ;
+
+        
+    
+    
+            var marker_fd924da3af856683477e152a6172472a = L.marker(
+                [75.0, -45.0],
+                {}
+            ).addTo(map_10c0e72f57d51c1e5ce9b77abd77a114);
+        
+    
+            var icon_5796d25e71609c3fad5b2f4ff45676ca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_fd924da3af856683477e152a6172472a.setIcon(icon_5796d25e71609c3fad5b2f4ff45676ca);
+        
+    
+        var popup_0e7fdd5ffda8e1ed008be9304adbe743 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8aef3ebdc51cbddda015822913505cb5 = $(`<div id="html_8aef3ebdc51cbddda015822913505cb5" style="width: 100.0%; height: 100.0%;">     Latitude: 75.0     Longitude: -45.0     Suitability: unSuitable for Hornbill     Hornbill Present: False     Suitable Habitat: False     </div>`)[0];
+                popup_0e7fdd5ffda8e1ed008be9304adbe743.setContent(html_8aef3ebdc51cbddda015822913505cb5);
+            
+        
+
+        marker_fd924da3af856683477e152a6172472a.bindPopup(popup_0e7fdd5ffda8e1ed008be9304adbe743)
+        ;
+
+        
+    
 </script>
 </html>
